@@ -2,28 +2,35 @@ mkdir ISMS
 cd ISMS 
 echo "1, All ursers"
 echo "-------------"
-dscl . list /Users | grep -v "^_" > users_list.txt
-echo "============="
+echo "1, All ursers" > $USER.txt
+echo "-------------" >> $USER.txt
+dscl . list /Users | grep -v "^_" >> $USER.txt
+echo "=============" >> $USER.txt
+echo >> $USER.txt
 echo
 echo "2, all application"
 echo "-------------"
-#find / -iname *.app > applications.txt
+find / -iname *.app > applications.txt
 echo "============="
+echo >> $USER.txt
 echo
-echo "3, filevault"
-echo "-------------"
-fdesetup status > filevault.txt
-echo "============="
+echo "3, filevault" >> $USER.txt
+echo "-------------" >> $USER.txt
+fdesetup status >> $USER.txt
+echo "=============" >> $USER.txt
+echo >> $USER.txt
 echo
-echo "4, icloud"
-echo "-------------"
-defaults read MobileMeAccounts Accounts > icloud.txt
-echo "============="
+echo "4, icloud" >> $USER.txt
+echo "-------------" >> $USER.txt
+defaults read MobileMeAccounts Accounts >> $USER.txt >> $USER.txt
+echo "=============" >> $USER.txt
+echo >> $USER.txt
 echo
-echo "7, security updated"
-echo "-------------"
-system_profiler SPInstallHistoryDataType | grep "Security Update" > updated.txt
-echo "============="
+echo "7, security updated" >> $USER.txt
+echo "-------------" >> $USER.txt
+system_profiler SPInstallHistoryDataType | grep "Security Update" >> $USER.txt
+echo "=============" >> $USER.txt
+echo >> $USER.txt
 echo
 echo "8, chrome history"
 echo "-------------"
