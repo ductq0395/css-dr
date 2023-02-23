@@ -1,7 +1,6 @@
+#!/bin/bash
 mkdir ISMS
 cd ISMS 
-echo "1, All ursers"
-echo "-------------"
 echo "1, All ursers" > $USER.txt
 echo "-------------" >> $USER.txt
 dscl . list /Users | grep -v "^_" >> $USER.txt
@@ -10,7 +9,7 @@ echo >> $USER.txt
 echo
 echo "2, all application"
 echo "-------------"
-find / -iname *.app > applications.txt
+#find / -iname *.app > applications.txt
 echo "============="
 echo >> $USER.txt
 echo
@@ -34,8 +33,11 @@ echo >> $USER.txt
 echo
 echo "8, chrome history"
 echo "-------------"
-cp "/Users/$USER/Library/Application Support/Google/Chrome/Default/History" chrome_history
-sqlite3 -header -csv chrome_history "select * from downloads;" > chrome_downloaded.csv
-sqlite3 -header -csv chrome_history "select * from urls;" > chrome_urls.csv
+Hihi=($(dscl . list /Users | grep -v "^_"))
+for str in ${Hihi[@]}; do
+  cp "/Users/$str/Library/Application Support/Google/Chrome/Default/History" chrome_history_$str
+  sqlite3 -header -csv chrome_history_$str "select * from downloads;" > chrome_downloaded_$str.csv
+  sqlite3 -header -csv chrome_history_$str "select * from urls;" > chrome_urls_$str.csv
+done
 echo "============="
 echo
