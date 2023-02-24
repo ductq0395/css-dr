@@ -21,7 +21,7 @@ echo >> $USER.txt
 echo
 echo "4, icloud" >> $USER.txt
 echo "-------------" >> $USER.txt
-defaults read MobileMeAccounts Accounts >> $USER.txt >> $USER.txt
+defaults read MobileMeAccounts Accounts >> $USER.txt
 echo "=============" >> $USER.txt
 echo >> $USER.txt
 echo
