@@ -9,7 +9,7 @@ echo >> $USER.txt
 echo
 echo "2, all application"
 echo "-------------"
-#find / -iname *.app > applications.txt
+find / -iname *.app > applications.txt
 echo "============="
 echo >> $USER.txt
 echo
