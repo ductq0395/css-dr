@@ -220,11 +220,11 @@ def do_the_report(pnl):
 
     print('Start upload test.xlsx')
     if pnl == 'vf':
-        requests.put("https://files.vincss.net/remote.php/webdav/Defense/VF/Bao_cao_hang_tuan/Auto_Qualys/vf.xlsx", auth=('ductq', 'taquangduc1'), data=open('test.xlsx', 'rb'))
+        requests.put("https://files.css.net/remote.php/webdav/Defense/VF/Bao_cao_hang_tuan/Auto_Qualys/vf.xlsx", auth=('ductq', 'taquangduc1'), data=open('test.xlsx', 'rb'))
     if pnl == '3s':
-        requests.put("https://files.vincss.net/remote.php/webdav/Defense/Vin3S/Bao_cao_hang_tuan/Auto_Qualys/vin3s.xlsx", auth=('ductq', 'taquangduc1'), data=open('test.xlsx', 'rb'))
+        requests.put("https://files.css.net/remote.php/webdav/Defense/3S/Bao_cao_hang_tuan/Auto_Qualys/3s.xlsx", auth=('ductq', 'taquangduc1'), data=open('test.xlsx', 'rb'))
     if pnl == 'es':    
-        requests.put("https://files.vincss.net/remote.php/webdav/Defense/VinES/Bao_cao_hang_tuan/Auto_Qualys/vines.xlsx", auth=('ductq', 'taquangduc1'), data=open('test.xlsx', 'rb'))
+        requests.put("https://files.css.net/remote.php/webdav/Defense/ES/Bao_cao_hang_tuan/Auto_Qualys/es.xlsx", auth=('ductq', 'taquangduc1'), data=open('test.xlsx', 'rb'))
     print('Done upload test.xlsx')
     os.remove('test.xlsx')
     print('Done remove local test.xlsx')
